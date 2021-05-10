@@ -1,3 +1,9 @@
+/*
+ * @Author: Zhenxiang Chen
+ * @Date:   2021-05-10 22:49:09
+ * @Last Modified by:   Zhenxiang Chen
+ * @Last Modified time: 2021-05-10 22:58:03
+ */
 import {
   AfterViewInit,
   Directive,
@@ -58,6 +64,8 @@ export class CurrencyMaskDirective implements AfterViewInit, ControlValueAccesso
   }
 
   ngAfterViewInit() {
+    this.elementRef.nativeElement.setAttribute("inputmode", "decimal");
+    this.elementRef.nativeElement.setAttribute("pattern", "[0-9]*");
     this.elementRef.nativeElement.style.textAlign = this.options && this.options.align ? this.options.align : this.optionsTemplate.align;
   }
 
