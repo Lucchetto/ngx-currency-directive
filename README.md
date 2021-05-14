@@ -76,6 +76,7 @@ Available options:
  * `nullable` - when true, the value of the clean field will be `null`, when false the value will be `0`
  * `min` - The minimum value (default: `undefined`)
  * `max` - The maximum value (default: `undefined`)
+ * `startFromEnd` - Start from end of input on focus (default: `undefined`)
  * `inputMode` - Determines how to handle numbers as the user types them (default: `FINANCIAL`)
 
 Input Modes:
@@ -110,6 +111,7 @@ export const customCurrencyMaskConfig = {
     nullable: true,
     min: null,
     max: null,
+    startFromEnd: false,
     inputMode: CurrencyMaskInputMode.FINANCIAL
 };
 

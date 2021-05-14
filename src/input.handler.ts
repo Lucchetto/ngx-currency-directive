@@ -6,8 +6,14 @@ export class InputHandler {
     private onModelChange: Function;
     private onModelTouched: Function;
 
-    constructor(htmlInputElement: HTMLInputElement, options: any) {
+    constructor(private htmlInputElement: HTMLInputElement, private options: any) {
         this.inputService = new InputService(htmlInputElement, options);
+    }
+
+    handleFocus() {
+        if (this.options.startFromEnd) {
+            this.inputService.inputManager.setCursorAt(this.htmlInputElement.value.length)
+        }
     }
 
     handleCut(event: any): void {

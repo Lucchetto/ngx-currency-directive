@@ -12,6 +12,7 @@ export interface CurrencyMaskConfig {
   nullable: boolean;
   min?: number;
   max?: number;
+  startFromEnd?: boolean;
   inputMode? : CurrencyMaskInputMode;
 }
 

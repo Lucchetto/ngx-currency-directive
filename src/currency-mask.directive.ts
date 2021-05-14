@@ -80,6 +80,11 @@ export class CurrencyMaskDirective implements AfterViewInit, ControlValueAccesso
     this.inputHandler = new InputHandler(this.elementRef.nativeElement, (<any>Object).assign({}, this.optionsTemplate, this.options));
   }
 
+  @HostListener("focus", ["$event"])
+  handleFocus(event: any) {
+    this.inputHandler.handleFocus()
+  }
+
   @HostListener("blur", ["$event"])
   handleBlur(event: any) {
     this.inputHandler.getOnModelTouched().apply(event);
