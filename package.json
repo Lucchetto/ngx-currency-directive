@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "ngx-currency-directive",
-  "version": "2.5.4",
+  "version": "2.5.6",
   "description": "A very simple currency mask directive that allows using a number attribute with the ngModel.",
   "scripts": {
     "start": "concurrently --raw \"webpack-dev-server --open\" \"npm run test:watch\"",
@@ -18,7 +18,7 @@
     "release": "npm run release:git && npm run release:npm",
     "prerelease": "npm test",
     "release:git": "git add package.json && git commit -m \"chore: bump version number\" && standard-version --first-release && git push --follow-tags origin master",
-    "release:npm": "npm run build:dist && npm publish dist",
+    "release:npm": "npm run build:dist && npm publish ./dist",
     "postrelease": "npm run build:clean && npm run gh-pages",
     "codecov": "cat coverage/lcov.info | codecov"
   },
