@@ -31,7 +31,7 @@ export class InputService {
         this.PER_AR_NUMBER.set("\u0669", "9");
     }
 
-    inputManager: InputManager;
+    readonly inputManager: InputManager;
 
     constructor(private htmlInputElement: any, private options: CurrencyMaskConfig) {
         this.inputManager = new InputManager(htmlInputElement);

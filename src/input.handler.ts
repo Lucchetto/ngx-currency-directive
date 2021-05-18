@@ -12,10 +12,9 @@ export class InputHandler {
 
     handleFocus() {
         if (this.options.startFromEnd) {
-            // Hax for chrome
-            setTimeout( function() {
+            setTimeout(function() {
                 this.inputService.inputManager.setCursorAt(this.htmlInputElement.value.length)
-            }, 0)
+            }.bind(this), 0)
         }
     }
 
